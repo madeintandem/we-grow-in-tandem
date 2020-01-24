@@ -1,10 +1,8 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import logo from './logo.svg'
+import './App.css'
 
 export default function Schedule() {
-
-
   return (
     <div className="App">
       <header className="App-header">
@@ -22,5 +20,5 @@ export default function Schedule() {
         </a>
       </header>
     </div>
-  );
+  )
 }
