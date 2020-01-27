@@ -7,14 +7,21 @@ const getWateringEvents = () => {
   let allEvents = []
   const firstDay = moment().day(8)
   const lastDay = moment().day(8 + 12*7)
+
   plants.forEach(plant => {
     let currentWateringDay = firstDay.clone()
     const daysInterval = parseInt(plant.water_after.split(' ')[0])
     while (currentWateringDay <= lastDay) {
+      let dayToWater = currentWateringDay.clone()
+      if (currentWateringDay.day() === 6) {
+        dayToWater = dayToWater.subtract(1, 'days')
+      } else if (currentWateringDay.day() === 0) {
+        dayToWater = dayToWater.add(1, 'days')
+      }
       allEvents.push({
         title: plant.name,
-        start: currentWateringDay.clone(),
-        end: currentWateringDay.clone(),
+        start: dayToWater,
+        end: dayToWater,
         allDay: true
       })
       currentWateringDay.add(daysInterval, 'days')
@@ -22,8 +29,6 @@ const getWateringEvents = () => {
   })
   return allEvents
 }
-
-
 
 export function Schedule() {
   const localizer = momentLocalizer(moment)
@@ -38,7 +43,7 @@ export function Schedule() {
         endAccessor='end'
         views={['month']}
         popup={true}
-        style={{ height: 500 }}
+        style={{ height: 750 }}
       />
     </div>
   )

@@ -1,11 +1,11 @@
 [
   {
     "name": "Fiddle Leaf Fig",
-    "water_after": "7 days"
+    "water_after": "4 days"
   },
   {
     "name": "Snake Plant",
-    "water_after": "14 days"
+    "water_after": "12 days"
   },
   {
     "name": "Money Tree",
@@ -21,23 +21,23 @@
   },
   {
     "name": "Bell Pepper Plant",
-    "water_after": "3 days"
+    "water_after": "2 days"
   },
   {
     "name": "Strawberry Plant",
-    "water_after": "3 days"
+    "water_after": "5 days"
   },
   {
     "name": "Dracaena",
-    "water_after": "14 days"
+    "water_after": "11 days"
   },
   {
     "name": "Spider Plant",
-    "water_after": "7 days"
+    "water_after": "8 days"
   },
   {
     "name": "Jade",
-    "water_after": "14 days"
+    "water_after": "10 days"
   },
   {
     "name": "Wavy Fern",
