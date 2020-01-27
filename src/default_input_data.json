@@ -4,6 +4,10 @@
     "water_after": "4 days"
   },
   {
+    "name": "Strawberry Plant",
+    "water_after": "5 days"
+  },
+  {
     "name": "Snake Plant",
     "water_after": "12 days"
   },
@@ -24,10 +28,6 @@
     "water_after": "2 days"
   },
   {
-    "name": "Strawberry Plant",
-    "water_after": "5 days"
-  },
-  {
     "name": "Dracaena",
     "water_after": "11 days"
   },
@@ -37,7 +37,7 @@
   },
   {
     "name": "Jade",
-    "water_after": "10 days"
+    "water_after": "2 weeks"
   },
   {
     "name": "Wavy Fern",

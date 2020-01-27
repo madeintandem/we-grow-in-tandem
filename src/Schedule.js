@@ -10,7 +10,7 @@ const getWateringEvents = () => {
 
   plants.forEach(plant => {
     let currentWateringDay = firstDay.clone()
-    const daysInterval = parseInt(plant.water_after.split(' ')[0])
+    const daysInterval = parseInt(plant.water_after)
     while (currentWateringDay <= lastDay) {
       let dayToWater = currentWateringDay.clone()
       if (currentWateringDay.day() === 6) {
