@@ -1,45 +1,43 @@
 import React from 'react'
 import { Calendar, momentLocalizer } from 'react-big-calendar'
 import moment from 'moment'
-import * as plants from './default_input_data.json';
+import plants from './default_input_data.json'
 
-window.moment = moment
 const getWateringEvents = () => {
   let allEvents = []
-  debugger
   const firstDay = moment().day(8)
-  // const lastDay = moment().day
-  JSON.parse(plants).forEach(plant => {
-
+  const lastDay = moment().day(8 + 12*7)
+  plants.forEach(plant => {
+    let currentWateringDay = firstDay.clone()
+    const daysInterval = parseInt(plant.water_after.split(" ")[0])
+    while (currentWateringDay <= lastDay) {
+      allEvents.push({
+        title: plant.name,
+        start: currentWateringDay.clone(),
+        end: currentWateringDay.clone(),
+        allDay: true
+      })
+      currentWateringDay.add(daysInterval, 'days')
+    }
   })
+  return allEvents
 }
 
 
 
 export function Schedule() {
   const localizer = momentLocalizer(moment)
-
-  console.log(moment().day(8))
-  getWateringEvents()
-
-
-  // Event {
-  //   title: string,
-  //   start: Date,
-  //   end: Date,
-  //   allDay?: boolean
-  //   resource?: any,
-  // }
-
-
+  const events = getWateringEvents()
 
   return (
     <div>
       <Calendar
         localizer={localizer}
-        events={[]}
-        startAccessor="start"
-        endAccessor="end"
+        events={events}
+        startAccessor='start'
+        endAccessor='end'
+        views={['month']}
+        popup={true}
         style={{ height: 500 }}
       />
     </div>
