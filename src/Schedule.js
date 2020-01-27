@@ -9,7 +9,7 @@ const getWateringEvents = () => {
   const lastDay = moment().day(8 + 12*7)
   plants.forEach(plant => {
     let currentWateringDay = firstDay.clone()
-    const daysInterval = parseInt(plant.water_after.split(" ")[0])
+    const daysInterval = parseInt(plant.water_after.split(' ')[0])
     while (currentWateringDay <= lastDay) {
       allEvents.push({
         title: plant.name,
